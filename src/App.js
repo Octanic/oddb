@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Menu from './components/Menu'
+import dadosIniciais from './Data/dadosIniciais.json';
+import BannerMain from './components/BannerMain';
+import Carousel from './components/Carousel';
+import Footer from './components/Footer';
+
+let catIndex = parseInt(Math.random() * (dadosIniciais.categorias.length));
+let videoIndex = parseInt(Math.random() * dadosIniciais.categorias[catIndex].videos.length);
+
+let carouselItems = [];
+for (let i = 0; i < dadosIniciais.categorias.length; i++) {
+  carouselItems.push(
+    <Carousel category={dadosIniciais.categorias[i]} />
+  )
+  
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ background: "#141414" }}>
+      <Menu />
+          
+      <BannerMain
+        videoTitle={dadosIniciais.categorias[catIndex].videos[videoIndex].titulo}
+        url={dadosIniciais.categorias[catIndex].videos[videoIndex].url}
+        videoDescription={dadosIniciais.categorias[catIndex].videos[videoIndex].description??""}
+      />
+
+      {carouselItems}
+
+      <Footer />
     </div>
   );
 }
