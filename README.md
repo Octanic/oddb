@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ODDb - Octanic Developer Database
+<img src="https://github.com/Octanic/oddb/blob/master/src/assets/img/ODDb.png" height='100'>
 
-## Available Scripts
+**Octanic Developer Database** - *a curated resource of development videos - and some random too, because no one was made of steel* :grin:
 
-In the project directory, you can run:
+> Yes, this is a IMDb logo rip-off. 
 
-### `npm start`
+Created during Imersão React Alura - Thanks once again guys!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Hosted at:
+https://oddb.vercel.app/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# What is this?
+This is a video library for developers. It contains the links I think it's too awesome to be hanging around YouTube without more people knowing about it.
 
-### `npm test`
+**Of course - it's a work still in progress.**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Nice. How to install and run on my machine?
+1. download it
+2. open it
+3. `npm install`
+4. `npm start`
+5. ???
+6. profit :thumbsup:
 
-### `npm run build`
+# Highlights
+The version explained in the course had some repetitions I could not help to allow it. So I did some tinkering to make it really random (No sweat about creating carousels. They are created as the data file grows/shrinks)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+let carouselItems = [];
+for (let i = 0; i < dadosIniciais.categorias.length; i++) {
+  carouselItems.push(
+    <Carousel category={dadosIniciais.categorias[i]} />
+  )
+  
+}
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Also, as I said, videos are random, and a little trick solved that:
+```javascript
+let catIndex = parseInt(Math.random() * (dadosIniciais.categorias.length));
+let videoIndex = parseInt(Math.random() * dadosIniciais.categorias[catIndex].videos.length);
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This allows me to get:
+- a random category
+- a random video inside a category
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then, my `BannerMain` component is declared like that
+```html
+<BannerMain
+    videoTitle={dadosIniciais.categorias[catIndex].videos[videoIndex].titulo}
+    url={dadosIniciais.categorias[catIndex].videos[videoIndex].url}
+    videoDescription={dadosIniciais.categorias[catIndex].videos[videoIndex].description??""}
+  />
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Final words
+This first class was a bit weird, but I can imagine the humongous massive amount of content that they could fit on 1h20m of video, and I think if the first class made a whole application, the next days should be really intense.
