@@ -3,14 +3,15 @@ import Logo from "../../assets/img/ODDb.png";
 import './Menu.css';
 import ButtonLink from '../ButtonLink';
 import Button from '../Button';
+import { Link } from 'react-router-dom';
 
 function Menu (){
     return (
         <nav className="Menu">
-            <a href='/'>
+            <Link to='/'>
                 <img className='Logo' src={Logo} alt="Octanic Developer Database" title='TODO: Margin for logo (Mobile seems broken)'></img>
-            </a>
-            <Button className="ButtonLink" href="/">
+            </Link>
+            <Button as={Link} className="ButtonLink" to="/cadastro/video">
                 Novo Vídeo
             </Button>
         </nav>
