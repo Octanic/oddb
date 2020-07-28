@@ -54,3 +54,6 @@ Then, my BannerMain component is declared like that
     videoDescription={dadosIniciais.categorias[catIndex].videos[videoIndex].description??""}
   />
 ```
+
+# Final words
+This first class was a bit weird, but I can imagine the humongous massive amount of content that they could fit on 1h20m of video, and I think if the first class made a whole application, the next days should be really intense.
