@@ -42,11 +42,12 @@ let catIndex = parseInt(Math.random() * (dadosIniciais.categorias.length));
 let videoIndex = parseInt(Math.random() * dadosIniciais.categorias[catIndex].videos.length);
 ```
 
-This allows me to get: 
-a) a random category
-b) a random video inside a category
+This allows me to get:
+- a random category
+- a random video inside a category
 
-Then, my BannerMain component is declared like that
+
+Then, my `BannerMain` component is declared like that
 ```html
 <BannerMain
     videoTitle={dadosIniciais.categorias[catIndex].videos[videoIndex].titulo}
