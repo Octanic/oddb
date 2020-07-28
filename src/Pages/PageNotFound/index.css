@@ -1,0 +1,19 @@
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+h1{
+  color:var(--backEnd);
+  background: var(--primary);
+  text-align: center;
+}
+
+@media (max-width:600px){
+  .hide{
+    display: none;
+  }
+}

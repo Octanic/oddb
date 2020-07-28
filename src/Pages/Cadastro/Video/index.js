@@ -6,13 +6,12 @@ function CadastroVideo(){
     return (
         <MainTemplate>
 
-            <h1>Cadastro Video</h1>
+            <h1>Cadastro de Vídeos</h1>
 
             <Link to="/cadastro/categoria">
                 Cadastrar Categoria
             </Link>  
         </MainTemplate>
-
     );
 }
 

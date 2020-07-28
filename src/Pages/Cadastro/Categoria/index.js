@@ -6,7 +6,19 @@ function CadastroCategoria(){
     return (
         <MainTemplate>
 
-            <h1>Cadastro Categoria</h1>
+            <h1>Cadastro de Categorias</h1>
+            
+            <form>
+
+                <label>
+                    Nome da Categoria:
+                    <input type="text" />
+                </label>
+
+                <button>
+                    Cadastrar
+                </button>
+            </form>
 
             <Link to="/">
                 Voltar
