@@ -1,47 +1,25 @@
 {
     "categorias": [
       {
-        "titulo": "Front End",
-        "link": "https://www.alura.com.br/formacao-front-end",
-        "cor": "#6BD1FF",
-        "link_extra": {
-          "text": "Formação de Front End na Alura",
-          "url": "https://www.alura.com.br/cursos-online-front-end"
+        "titulo":"Imersão React - Alura",
+        "link": "https://github.com/octanic/oddb",
+        "cor": "#53C1DE",
+        "link_extra":{
+          "text":"Canal das lives",
+          "url":"https://twitch.tv/octanic"
         },
-        "videos": [
+        "videos":[
           {
-            "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-            "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw",
-            "description": "O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!"
+            "titulo": "Aula 1",
+            "url": "https://www.youtube.com/watch?v=HNNUyyXlBeo",
+            "description":"Na primeira da imersão, temos a criação da primeira tela do aplicativo"
           },
           {
-            "titulo": "SEO com React",
-            "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
-          },
-          {
-            "titulo": "Componentização com VanillaJS #AluraMais",
-            "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
-          },
-          {
-            "titulo": "Pare de chutar e aprenda a display: inline #01",
-            "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
-          },
-          {
-            "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-            "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
-          },
-          {
-            "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-            "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
-          },
-          {
-            "titulo": "Novidades do Angular v9",
-            "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
-          },
-          {
-            "titulo": "Base para aprender os frameworks",
-            "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-          }        
+            "titulo": "Aula 2",
+            "url": "https://www.youtube.com/watch?v=UWbZLi29tgg",
+            "description":"Na segunda aula, foi abordado o roteamento"
+          }
+          
         ]
       },
       {

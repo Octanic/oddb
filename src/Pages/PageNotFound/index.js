@@ -20,7 +20,7 @@ function PageNotFound(){
                 <Link to="/">Voltar para a home</Link>
             </div>
             <div className="right hide">
-                <iframe src="https://upbeat-swanson-5add6b.netlify.app/" width='1024' height="768"></iframe>
+                <iframe src="https://upbeat-swanson-5add6b.netlify.app/" width='1024' height="768" title='Hipsta Adventures'></iframe>
 
             </div>
                
