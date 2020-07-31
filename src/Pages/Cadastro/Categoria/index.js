@@ -4,12 +4,20 @@ import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 
+const axios = require('axios');
+
 function CadastroCategoria(){
     const formDataStart = {
+
         name: "",
         link: "",
         color: "#000"
     };
+
+    const URL = 
+        window.location.hostname.includes("localhost") ?
+            "http://localhost:8080/categorias":
+            "https://oddb.herokuapp.com/categorias";
 
     const [formData, setFormData] = useState(formDataStart);
     const [categorias, setCategorias] = useState([]);
@@ -26,7 +34,12 @@ function CadastroCategoria(){
     }
 
     useEffect(()=>{
-        const URL = "http://localhost:8080/categorias";
+        const URL = 
+        window.location.hostname.includes("localhost") ?
+            "http://localhost:8080/categorias":
+            "https://oddb.herokuapp.com/categorias";
+
+        console.log(URL);
         fetch(URL)
             .then(async(resp) => {
                 const resposta = await resp.json();
@@ -43,17 +56,26 @@ function CadastroCategoria(){
             
             <form onSubmit={(e)=>{
                 e.preventDefault();
-                setCategorias([
-                    ...categorias,
+                
+                console.log(formData);
+                let form = 
                     {
-                        //id: formData.id,
+                        // id: formData.id,
                         name: formData.name,
                         link: formData.link,
                         color: formData.color
-                    }
+                    };
+                
+                setCategorias([
+                    ...categorias,
+                    form
                 ]);
+
+                axios.post(URL, form).then(r => {console.log(r.data)});
+
                 setFormData(formDataStart);
             }}>
+                {/* <FormField label="" type="hidden" value={""+categorias.length+1} name="id" /> */}
 
                 <FormField label="Nome da Categoria" name="name" value={formData.name} onChange={handleChange}/>
 

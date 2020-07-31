@@ -1,16 +1,40 @@
 {
-    "categorias":[
-        {
-            "id":"1",
-            "name":"Imersão React - Alura",
-            "link":"https://twitch.tv/octanic",
-            "color":"#53C1DE"
-        },
-        {
-            "id":"2",
-            "name":"Segurança da informação",
-            "link":"",
-            "color":"#00C86F"
-        }
-    ]
+  "categorias": [
+    {
+      "id": "1",
+      "name": "Imersão React - Alura",
+      "link": "https://twitch.tv/octanic",
+      "color": "#53C1DE"
+    },
+    {
+      "id": "2",
+      "name": "Segurança da informação",
+      "link": "",
+      "color": "#00C86F"
+    },
+    {
+      "id": "3",
+      "name": "Lower Level Tinkering",
+      "link": "",
+      "color": "#9cd33b"
+    },
+    {
+      "id": "4",
+      "name": "teste",
+      "link": "https://www.google.com",
+      "color": "#3b25cf"
+    },
+    {
+      "name": "teste",
+      "link": "link",
+      "color": "#3c87d7",
+      "id": "X8vNgYH"
+    },
+    {
+      "name": "trefds",
+      "link": "https://katal.com.br",
+      "color": "#ab2626",
+      "id": "JRoZKYp"
+    }
+  ]
 }
