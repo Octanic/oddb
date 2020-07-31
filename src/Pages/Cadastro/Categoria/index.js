@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import MainTemplate from '../../../components/Templates';
 import { Link } from 'react-router-dom';
-import dadosIniciais from '../../../Data/dadosIniciais.json';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria(){
     const formDataStart = {
@@ -12,7 +12,7 @@ function CadastroCategoria(){
     };
 
     const [formData, setFormData] = useState(formDataStart);
-    const [categorias, setCategorias] = useState(dadosIniciais.categorias);
+    const [categorias, setCategorias] = useState([]);
 
     function setValue(key, val){
         setFormData({
@@ -24,6 +24,18 @@ function CadastroCategoria(){
     function handleChange(e){
         setValue(e.target.getAttribute("name"), e.target.value);
     }
+
+    useEffect(()=>{
+        const URL = "http://localhost:8080/categorias";
+        fetch(URL)
+            .then(async(resp) => {
+                const resposta = await resp.json();
+                setCategorias([
+                    ...resposta
+                ]);
+            })
+    }, [])
+
     return (
         <MainTemplate>
 
@@ -34,9 +46,10 @@ function CadastroCategoria(){
                 setCategorias([
                     ...categorias,
                     {
-                        titulo: formData.name,
+                        //id: formData.id,
+                        name: formData.name,
                         link: formData.link,
-                        cor: formData.color
+                        color: formData.color
                     }
                 ]);
                 setFormData(formDataStart);
@@ -52,15 +65,15 @@ function CadastroCategoria(){
                     {
                         categorias.map( (cat, idx) =>{
                             return (
-                                <li key={`${cat}${idx}`}>{cat.titulo}</li>
+                                <li key={`${cat.id}`}>{cat.name}</li>
                             )
                         })
                     }
                 </ul>
 
-                <button>
+                <Button>
                     Cadastrar
-                </button>
+                </Button>
             </form>
 
             <Link to="/">

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const Button = styled.a`    
-        color: var(--white);
-        border: 1px solid var(--white);
+        color: var(--black);
+        background: var(--primary);
+        border: 1px solid var(--black);
         box-sizing: border-box;
         cursor: pointer;
         padding: 16px 24px;

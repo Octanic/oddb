@@ -1,0 +1,16 @@
+{
+    "categorias":[
+        {
+            "id":"1",
+            "name":"Imersão React - Alura",
+            "link":"https://twitch.tv/octanic",
+            "color":"#53C1DE"
+        },
+        {
+            "id":"2",
+            "name":"Segurança da informação",
+            "link":"",
+            "color":"#00C86F"
+        }
+    ]
+}
