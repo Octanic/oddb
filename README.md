@@ -19,7 +19,7 @@ This is a video library for developers. It contains the links I think it's too a
 1. download it
 2. open it
 3. `npm install`
-4. `npm start`
+4. `npm run dev`
 5. ???
 6. profit :thumbsup:
 
