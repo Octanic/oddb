@@ -3,6 +3,7 @@ import MainTemplate from '../../../components/Templates';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../Hooks/useForm';
 
 const axios = require('axios');
 
@@ -14,24 +15,14 @@ function CadastroCategoria(){
         color: "#000"
     };
 
+    const {handleChange, clearForm, formData} = useForm(formDataStart);
+
     const URL = 
         window.location.hostname.includes("localhost") ?
             "http://localhost:8080/categorias":
             "https://oddb.herokuapp.com/categorias";
 
-    const [formData, setFormData] = useState(formDataStart);
-    const [categorias, setCategorias] = useState([]);
-
-    function setValue(key, val){
-        setFormData({
-            ...formData,
-            [key]: val
-        });
-    }
-
-    function handleChange(e){
-        setValue(e.target.getAttribute("name"), e.target.value);
-    }
+    const [categorias, setCategorias] = useState([]);   
 
     useEffect(()=>{
         const URL = 
@@ -47,7 +38,7 @@ function CadastroCategoria(){
                     ...resposta
                 ]);
             })
-    }, [])
+    }, []);
 
     return (
         <MainTemplate>
@@ -73,10 +64,8 @@ function CadastroCategoria(){
 
                 axios.post(URL, form).then(r => {console.log(r.data)});
 
-                setFormData(formDataStart);
+                clearForm();
             }}>
-                {/* <FormField label="" type="hidden" value={""+categorias.length+1} name="id" /> */}
-
                 <FormField label="Nome da Categoria" name="name" value={formData.name} onChange={handleChange}/>
 
                 <FormField label="Link" name="link" value={formData.link} onChange={handleChange}/>

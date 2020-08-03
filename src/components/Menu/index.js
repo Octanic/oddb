@@ -10,9 +10,9 @@ function Menu (){
             <Link to='/'>
                 <img className='Logo' src={Logo} alt="Octanic Developer Database" title='TODO: Margin for logo (Mobile seems broken)'></img>
             </Link>
-            <Button as={Link} className="ButtonLink" to="/cadastro/video">
+            {/* <Button as={Link} className="ButtonLink" to="/cadastro/video">
                 Novo Vídeo
-            </Button>
+            </Button> */}
         </nav>
     );
 }

@@ -23,6 +23,11 @@
             "titulo": "Aula 3",
             "url": "https://www.youtube.com/watch?v=Klrah2RJtxA",
             "description":"Na terceira aula, foi criada a tela de cadastro de categoria usando o useState para data binding e explicando o conceito."
+          },
+          {
+            "titulo":"Aula 4",
+            "description":"Nesta aula, vamos ver como montar uma API e consumí-la via ajax. Contém o desafio de deixar a tela de categorias com um cadastro funcionando",
+            "url": "https://www.youtube.com/watch?v=8G2xLAk1dmc"
           }
           
         ]
